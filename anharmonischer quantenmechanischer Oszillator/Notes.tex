@@ -1,0 +1,108 @@
+
+\documentclass[a4paper,11pt,DIV=12,oneside]{scrreprt}
+
+% input encoding
+\usepackage[utf8]{inputenc} 
+% font encoding            
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}  	
+% language		    
+\usepackage[ngerman]{babel}              
+
+% paragraph indent
+\setlength{\parindent}{0pt}
+% captions
+\setkomafont{captionlabel}{\sffamily\bfseries}
+%\addtokomafont{caption}{\centering} 
+\setcapindent{0pt}
+% figures
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+% positioning of figures and tabels
+\usepackage{float}     
+% extentions for tabular environment                          
+\usepackage{multirow}
+% mathematical formatting                         
+\usepackage{amsmath,amsfonts}
+
+% colors
+\usepackage{xcolor}
+% TikZ
+\usepackage{tikz}
+\usetikzlibrary{arrows,patterns}
+\tikzset{>=angle 45}
+
+
+\renewcommand{\vec}{\boldsymbol}
+
+\begin{document}
+
+
+
+\setlength{\tabcolsep}{12.5pt}     
+\renewcommand{\arraystretch}{1.25}
+
+\begin{gather}
+\left(-\frac{\hbar^2}{2m}\Delta + \frac{1}{2}m\omega^2x^2\right)\psi(x) = E\,\psi(x). 
+\end{gather}
+
+\begin{gather}
+\xi = \sqrt{\frac{m\omega}{\hbar}}\,x \quad\text{und}\quad n = \frac{2E}{\hbar\omega}
+\end{gather}
+
+ \begin{gather}
+\psi(\xi) = H(\xi)\,\mathrm e^{-\xi^2/2} 
+\end{gather}
+
+  
+\begin{gather}
+H''(x) - 2x H'(x) + 2\nu H(x) = 0 \quad\text{mit}\quad \nu = 0,1,2,\dots 
+\end{gather}
+
+
+    
+\begin{gather}
+H_\nu(x)=(-1)^\nu e^{x^2}\frac{d^\nu}{dx^\nu}\mathrm e^{-x^2}
+\end{gather}
+
+    
+\begin{table}[H]
+\centering
+\captionabove{Hermit-Polynome für $H_\nu(x)$ für $\nu = 0$ bis $3$.}
+\begin{tabular}{cl} \hline
+$\nu$ & $H_\nu(x)$ \\ \hline	
+0 & $1$ \\
+1 & $2x$ \\
+2 & $4x^2 - 2$ \\
+3 & $8x^3 - 12x$ \\ \hline
+\end{tabular}
+\label{Tab:Sphärische-Besselfunktionen}
+\end{table}
+
+\begin{gather}
+\psi_\nu(x)= \left(\frac{m\omega}{\pi\hbar}\right)^\frac{1}{4}\frac{1}{\sqrt{2^\nu\nu!}} \,H_\nu\left(\sqrt{\frac{m\omega}{\hbar}}x\right)\,\mathrm e^{-\frac{1}{2}\frac{m\omega}{\hbar}x^2}.
+\end{gather}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[yscale=1.35,xscale=1.0,semithick,samples=250]
+% Achsen
+\draw[->] (-4,0) -- (4.5,0) node[right] {$x$};
+\draw[->] (0,0) node[below] {0} -- (0,5) node[above] {$E$};
+% Energie
+\foreach \n/\color in {0/red,1/blue,2/green,3/magenta} {
+   \draw[dashed,thin] (-3.75,\n+0.5) node[left,color=\color] {$E_\n$} -- (3.75,\n+0.5);
+   \node[color=\color] at ({1.15+sqrt(2*\n+1)},\n+0.85) {$\psi_\n(x)$};
+}
+% Potential
+\draw[domain=-2.85:2.85,samples=100,thick] plot(\x,{0.5*\x*\x});
+\node at (-2.85,4.5) {$V(x) = \dfrac{1}{2}m\omega^2x^2$};
+% Wellenfunktionen
+\draw[domain=-3.75:3.75,red,thick] plot(\x,{0.5*exp(-0.5*\x*\x) + 0.5});
+\draw[domain=-3.75:3.75,blue,thick] plot(\x,{0.5*1/sqrt(2)*\x*exp(-0.5*\x*\x) + 1.5});
+\draw[domain=-3.75:3.75,green,thick] plot(\x,{0.5*1/sqrt(8)*(4*\x*\x-2)*exp(-0.5*\x*\x) + 2.5});
+\draw[domain=-3.75:3.75,magenta,thick] plot(\x,{0.5*1/sqrt(48)*(8*\x*\x*\x-12*\x)*exp(-0.5*\x*\x) + 3.5});
+\end{tikzpicture}
+\end{figure}
+
+\end{document}

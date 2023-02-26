@@ -1,0 +1,15 @@
+CFLAGS=-O3 -pedantic `sdl-config --cflags`
+LDFLAGS=`sdl-config --libs` -lSDL_gfx
+
+CC=g++
+LD=g++
+
+%.o: %.cpp
+	$(CC) -c $(CFLAGS) $<
+
+ALL: zufallszahl Bibliothekzufallszahlen
+
+zufallszahl: zufallszahl.o
+	    $(LD) $(LDFLAGS) -o zufallszahl zufallszahl.o
+Bibliothekzufallszahlen: Bibliothekzufallszahlen.o
+	    $(LD) $(LDFLAGS) -o Bibliothekzufallszahlen Bibliothekzufallszahlen.o -lgsl -lgslcblas -lm

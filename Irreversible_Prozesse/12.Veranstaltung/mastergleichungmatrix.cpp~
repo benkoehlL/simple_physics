@@ -1,0 +1,35 @@
+#include <iostream>
+#include <time.h>
+#include <stdio.h>
+#include <gsl/gsl_blas.h>
+
+#define T 1000000000
+using namespace std;
+
+int main()
+{
+  clock_t time;
+  time=clock();
+  double p[] = { 0.25,
+                 0.25,
+                 0.5,};
+  double gamma[3*3]={0.5,0.5,0,0.5,0,0.5,0,0.5,0.5};
+  for(int t=0;t<T;t++)
+  {
+  gsl_matrix_view P = gsl_matrix_view_array(p, 3, 1);
+  gsl_matrix_view P0 = gsl_matrix_view_array(p, 3, 1);
+  gsl_matrix_view Gamma = gsl_matrix_view_array(gamma, 3, 3);
+  
+  gsl_blas_dgemm (CblasNoTrans, CblasNoTrans,
+                  1.0, &P0.matrix, &Gamma.matrix,
+                  0.0, &P.matrix);
+  for(int i=0;i<3;i++)
+  {
+    p[i]=p[i];
+  }
+  }
+  time=clock()-time;
+  cout << '\t' << p[0] << '\t' <<  p[1] << '\t' << p[2] << '\t' << time << '\n';
+  return 0;
+}
+

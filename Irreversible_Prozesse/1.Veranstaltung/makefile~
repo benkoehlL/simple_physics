@@ -1,0 +1,13 @@
+CFLAGS=-O3 -pedantic `sdl-config --cflags`
+LDFLAGS=`sdl-config --libs` -lSDL_gfx
+
+CC=g++
+LD=g++
+
+%.o: %.cpp
+	$(CC) -c $(CFLAGS) $<
+
+ALL: Hallo_Welt
+
+Hallo_Welt: Hallo_Welt.o
+	    $(LD) $(LDSFLAGS) -o Hallo_Welt Hallo_Welt.o

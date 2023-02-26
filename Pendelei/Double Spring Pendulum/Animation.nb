@@ -1,0 +1,188 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6067,        179]
+NotebookOptionsPosition[      5719,        163]
+NotebookOutlinePosition[      6053,        178]
+CellTagsIndexPosition[      6010,        175]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"state", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{
+    "\"\</home/user/Dropbox/Bartin K\[ODoubleDot]zl \
+stuff/Doppelfederpendel/Data/xycoordinatesl1_1l2_1m1_1m2_1k1_100k2_200pert.\
+dat\>\"", ",", "\"\<Data\>\""}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.734534544750524*^9, 3.734534586410838*^9}, {
+  3.734536992649187*^9, 3.7345370070439157`*^9}, {3.7345371436792717`*^9, 
+  3.7345371458787727`*^9}, {3.734537675651218*^9, 3.734537677762333*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"x1", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"state", "[", 
+       RowBox[{"[", "i", "]"}], "]"}], "[", 
+      RowBox[{"[", "2", "]"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", 
+       RowBox[{"Length", "[", "state", "]"}]}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"y1", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"state", "[", 
+       RowBox[{"[", "i", "]"}], "]"}], "[", 
+      RowBox[{"[", "3", "]"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", 
+       RowBox[{"Length", "[", "state", "]"}]}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"x2", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"state", "[", 
+       RowBox[{"[", "i", "]"}], "]"}], "[", 
+      RowBox[{"[", "4", "]"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", 
+       RowBox[{"Length", "[", "state", "]"}]}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"y2", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"state", "[", 
+       RowBox[{"[", "i", "]"}], "]"}], "[", 
+      RowBox[{"[", "5", "]"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", 
+       RowBox[{"Length", "[", "state", "]"}]}], "}"}]}], "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.7345345895131493`*^9, 3.734534621521666*^9}, {
+  3.73453468790895*^9, 3.734534760323224*^9}, {3.734536270685461*^9, 
+  3.7345362774163017`*^9}, {3.734536457606564*^9, 3.734536464940078*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"frames", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Graphics", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"Gray", ",", "Thick", ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"x1", "[", 
+               RowBox[{"[", "t", "]"}], "]"}], ",", 
+              RowBox[{"y1", "[", 
+               RowBox[{"[", "t", "]"}], "]"}]}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"x2", "[", 
+               RowBox[{"[", "t", "]"}], "]"}], ",", 
+              RowBox[{"y2", "[", 
+               RowBox[{"[", "t", "]"}], "]"}]}], "}"}]}], "}"}], "]"}], ",", 
+         RowBox[{"Darker", "[", "Blue", "]"}], ",", 
+         RowBox[{"Disk", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0"}], "}"}], ",", ".1"}], "]"}], ",", 
+         RowBox[{"Darker", "[", "Red", "]"}], ",", 
+         RowBox[{"Disk", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"x1", "[", 
+              RowBox[{"[", "t", "]"}], "]"}], ",", 
+             RowBox[{"y1", "[", 
+              RowBox[{"[", "t", "]"}], "]"}]}], "}"}], ",", ".1"}], "]"}], 
+         ",", 
+         RowBox[{"Disk", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"x2", "[", " ", 
+              RowBox[{"[", "t", "]"}], "]"}], ",", 
+             RowBox[{"y2", "[", 
+              RowBox[{"[", "t", "]"}], "]"}]}], "}"}], ",", ".1"}], "]"}]}], 
+        "}"}], ",", 
+       RowBox[{"PlotRange", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "2.5"}], ",", "2.5"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "3"}], ",", "1"}], "}"}]}], "}"}]}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", "1", ",", 
+       RowBox[{"Length", "[", "state", "]"}]}], "}"}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.7345345385792007`*^9, 3.734534538591022*^9}, {
+   3.734534793133875*^9, 3.734534808713531*^9}, {3.7345349599263697`*^9, 
+   3.734534959997593*^9}, {3.7345350388305483`*^9, 3.734535256293243*^9}, {
+   3.734535288074604*^9, 3.734535380969117*^9}, {3.7345366027764587`*^9, 
+   3.734536709263822*^9}, {3.73453674027059*^9, 3.734536777494149*^9}, 
+   3.734537178564486*^9, {3.734537213719737*^9, 3.734537261279593*^9}, {
+   3.734537339559304*^9, 3.734537357755826*^9}, {3.73453740675915*^9, 
+   3.734537409896656*^9}, {3.7345381205374117`*^9, 3.734538125485793*^9}}],
+
+Cell[BoxData[
+ RowBox[{"ListAnimate", "[", "frames", "]"}]], "Input",
+ CellChangeTimes->{{3.734534367818521*^9, 3.734534377624308*^9}, {
+  3.734534843387512*^9, 3.734534846095924*^9}, {3.734539873128409*^9, 
+  3.73453987732937*^9}, {3.7345412180606937`*^9, 3.734541219908113*^9}}]
+},
+WindowSize->{808, 911},
+WindowMargins->{{471, Automatic}, {9, Automatic}},
+FrontEndVersion->"10.2 for Linux x86 (64-bit) (July 29, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 494, 10, 121, "Input"],
+Cell[1055, 32, 1642, 51, 99, "Input"],
+Cell[2700, 85, 2732, 70, 143, "Input"],
+Cell[5435, 157, 280, 4, 32, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

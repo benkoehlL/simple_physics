@@ -1,0 +1,260 @@
+
+
+*******************************************************************************
+Mon Oct 28 10:11:15 2013
+
+
+FIT:    data read from "histo.dat" u 1:2
+        #datapoints = 1000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.84818e+09       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.0791617
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+BREAK:          w = 0 in Givens();  Cjj = -1.0392e-305,  Cij = 2.06119e-303
+
+
+
+*******************************************************************************
+Mon Oct 28 10:15:11 2013
+
+
+FIT:    data read from "histo.dat" u 1:2
+        #datapoints = 1000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.84818e+09       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.111952
+
+initial set of free parameter values
+
+a               = 1
+BREAK:          w = 0 in Givens();  Cjj = -1.0392e-305,  Cij = 2.06119e-303
+
+
+
+*******************************************************************************
+Mon Oct 28 10:17:48 2013
+
+
+FIT:    data read from "histo.dat" u 1:2
+        #datapoints = 1000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.84818e+09       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.111952
+
+initial set of free parameter values
+
+a               = 1.001
+BREAK:          w = 0 in Givens();  Cjj = -1.0392e-305,  Cij = 2.06119e-303
+
+
+
+*******************************************************************************
+Mon Oct 28 10:20:27 2013
+
+
+FIT:    data read from "histo.dat" u 1:2
+	x range restricted to [-50.0000 : 50.0000]
+        #datapoints = 1000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.84818e+09       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.0791617
+
+initial set of free parameter values
+
+a               = 1.002
+b               = 1.001
+BREAK:          w = 0 in Givens();  Cjj = -1.0392e-305,  Cij = 2.06119e-303
+
+
+
+*******************************************************************************
+Mon Oct 28 10:20:32 2013
+
+
+FIT:    data read from "histo.dat" u 1:2
+	x range restricted to [-50.0000 : 50.0000]
+        #datapoints = 1000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.84818e+09       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.111952
+
+initial set of free parameter values
+
+a               = 1.002
+BREAK:          w = 0 in Givens();  Cjj = -1.0392e-305,  Cij = 2.06119e-303
+
+
+
+*******************************************************************************
+Mon Oct 28 10:23:08 2013
+
+
+FIT:    data read from "histo.dat" u 1:2
+        #datapoints = 1000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 3.13102e+10       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.111952
+
+initial set of free parameter values
+
+a               = 1
+BREAK:          w = 0 in Givens();  Cjj = -1.0392e-305,  Cij = 2.06119e-303
+
+
+
+*******************************************************************************
+Mon Oct 28 10:23:56 2013
+
+
+FIT:    data read from "histo.dat" u 1:2
+	x range restricted to [-10.0000 : 10.0000]
+        #datapoints = 201
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 3.13102e+10       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.249708
+
+initial set of free parameter values
+
+a               = 1.001
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.34359e+09
+rel. change during last iteration : -7.50173e-13
+
+degrees of freedom    (FIT_NDF)                        : 200
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 3423.15
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1.1718e+07
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 48076            +/- 966.9        (2.011%)
+
+
+correlation matrix of the fit parameters:
+
+               a      
+a               1.000 
+
+
+*******************************************************************************
+Mon Oct 28 10:26:36 2013
+
+
+FIT:    data read from "histo.dat" u 1:2
+	x range restricted to [-10.0000 : 10.0000]
+BREAK:          No data to fit 
+
+
+
+*******************************************************************************
+Mon Oct 28 10:27:16 2013
+
+
+FIT:    data read from "histo.dat" u 1:2
+	x range restricted to [-10.0000 : 10.0000]
+BREAK:          No data to fit 
+
+
+
+*******************************************************************************
+Mon Oct 28 10:29:03 2013
+
+
+FIT:    data read from "histo.dat" u 1:2
+	x range restricted to [-10.0000 : 10.0000]
+        #datapoints = 201
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 3.13102e+10       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.249708
+
+initial set of free parameter values
+
+a               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.34359e+09
+rel. change during last iteration : -7.50173e-13
+
+degrees of freedom    (FIT_NDF)                        : 200
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 3423.15
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1.1718e+07
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 48076            +/- 966.9        (2.011%)
+
+
+correlation matrix of the fit parameters:
+
+               a      
+a               1.000 

@@ -1,0 +1,82 @@
+#include <iostream>
+
+#include <SDL.h>
+#include <SDL_gfxPrimitives.h>
+
+#include <gsl/gsl_rng.h>
+#include <gsl/gsl_randist.h>
+#include <gsl/gsl_cdf.h>
+#include <cmath>
+
+#define epsilon1 10
+#define epsilon2 8
+#define gamma1 2
+#define gamma2 1.5
+#define h 0.01
+
+using namespace std;
+void kstep (double[4],double[8]);
+void timestep (double[4],double [8]);
+double xstep (double[4]);
+double ystep (double[4]);
+int t;
+
+int main()
+{
+  double x[4];
+  double k[8]={0,0,0,0,0,0,0,0};
+    /*for(int transient=0;transient<100000;transient++){	  
+	timestep(x,k,c);
+	for(int i=0;i<3;i++){
+	  x[i]=x[i+3];
+	}
+  }*/	  	
+  for(int i=0;i<6;i++){
+	x[0]=10+5*i;
+	x[1]=5;
+	x[2]=0;
+	x[3]=0;
+
+	  for(int t=0;t<10000;t++){
+			timestep(x,k);
+	  		cout << x[0] << '\t' << x[1] << '\n';
+	  }
+  }
+  return 0;
+}
+
+void timestep (double *x,double *k)
+{
+  kstep(x,k);
+  for(int i=0;i<2;i++){
+     x[i+2]=x[i]+h*(k[0+i*4]+2*(k[1+i*4]+k[2+i*4])+k[3+i*4])/6.0;
+     for(int i=0;i<2;i++){
+		  x[i]=x[i+2];
+     }
+  }
+}
+
+void kstep (double *x,double *k){
+
+     k[0]=xstep(x);
+     k[4]=ystep(x);
+     double xa[2]={x[0]+h/2*k[0],x[1]+h/2*k[4]};
+     k[1]=xstep(xa);
+     k[5]=ystep(xa);
+     double xb[2]={x[0]+h/2*k[1],x[1]+h/2*k[5]};
+     k[2]=xstep(xb);
+     k[6]=ystep(xb);
+     double xc[2]={x[0]+h*k[2],x[1]+h*k[6]};
+     k[3]=xstep(xc);
+     k[7]=ystep(xc);
+}
+
+double xstep(double *x){
+  
+  return (x[0]*(epsilon1-gamma1*x[1]));
+}
+
+double ystep(double *x){
+
+  return (-x[1]*(epsilon2-gamma2*x[0]));
+}
